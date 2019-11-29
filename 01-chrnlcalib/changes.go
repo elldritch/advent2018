@@ -43,7 +43,7 @@ func Repeat(changes Changes) int {
 	frequency := 0
 	for {
 		for _, change := range changes {
-			if _, ok := seen[frequency]; ok {
+			if seen[frequency] {
 				return frequency
 			}
 			seen[frequency] = true
