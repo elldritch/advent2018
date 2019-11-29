@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	ims "github.com/liftM/advent2018/02-ims"
+	"github.com/liftM/advent2018/inpututil"
 )
 
 func main() {
@@ -15,7 +16,7 @@ func main() {
 		panic("-input must be set")
 	}
 
-	lines, err := ims.ReadFile(*input)
+	lines, err := inpututil.ReadFile(*input)
 	if err != nil {
 		panic(err)
 	}

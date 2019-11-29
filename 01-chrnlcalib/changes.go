@@ -1,24 +1,15 @@
 package chrnlcalib
 
 import (
-	"bufio"
 	"errors"
-	"os"
 	"strconv"
 )
 
 type Changes []int
 
-func ReadFile(path string) (Changes, error) {
-	file, err := os.Open(path)
-	if err != nil {
-		return nil, err
-	}
-
+func Parse(lines []string) (Changes, error) {
 	var changes Changes
-	scanner := bufio.NewScanner(file)
-	for scanner.Scan() {
-		line := scanner.Text()
+	for _, line := range lines {
 		sign := 1
 
 		if line[0] == '+' {

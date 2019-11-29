@@ -5,6 +5,7 @@ import (
 	"fmt"
 
 	chrnlcalib "github.com/liftM/advent2018/01-chrnlcalib"
+	"github.com/liftM/advent2018/inpututil"
 )
 
 func main() {
@@ -15,7 +16,11 @@ func main() {
 		panic("-input must be set")
 	}
 
-	changes, err := chrnlcalib.ReadFile(*input)
+	lines, err := inpututil.ReadFile(*input)
+	if err != nil {
+		panic(err)
+	}
+	changes, err := chrnlcalib.Parse(lines)
 	if err != nil {
 		panic(err)
 	}
