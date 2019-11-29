@@ -26,8 +26,8 @@ func main() {
 	}
 
 	result := chrnlcalib.Result(changes)
-	fmt.Printf("Part one: %d\n", result)
+	fmt.Printf("Resulting frequency: %d\n", result)
 
 	repeat := chrnlcalib.Repeat(changes)
-	fmt.Printf("Part two: %d\n", repeat)
+	fmt.Printf("First frequency reached twice: %d\n", repeat)
 }
