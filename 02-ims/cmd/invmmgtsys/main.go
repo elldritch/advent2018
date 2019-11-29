@@ -23,6 +23,14 @@ func main() {
 
 	counts := ims.Counts(lines)
 	sum := ims.Checksum(counts)
+	fmt.Printf("Checksum: %d\n", sum)
 
-	fmt.Printf("Part one: %d\n", sum)
+	pair, err := ims.Find(lines)
+	if err != nil {
+		panic(err)
+	}
+	fmt.Printf("Correct box IDs:\n  %s\n  %s\n", pair[0], pair[1])
+
+	common := ims.Common(pair[0], pair[1])
+	fmt.Printf("Common letters: %s\n", common)
 }
