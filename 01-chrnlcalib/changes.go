@@ -1,4 +1,4 @@
-package chronalcalibration
+package chrnlcalib
 
 import (
 	"bufio"

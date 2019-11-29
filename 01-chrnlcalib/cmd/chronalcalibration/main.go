@@ -4,7 +4,7 @@ import (
 	"flag"
 	"fmt"
 
-	chronalcalibration "github.com/liftM/advent2018/01-chronalcalibration"
+	chrnlcalib "github.com/liftM/advent2018/01-chrnlcalib"
 )
 
 func main() {
@@ -15,14 +15,14 @@ func main() {
 		panic("-input must be set")
 	}
 
-	changes, err := chronalcalibration.ReadFile(*input)
+	changes, err := chrnlcalib.ReadFile(*input)
 	if err != nil {
 		panic(err)
 	}
 
-	result := chronalcalibration.Result(changes)
+	result := chrnlcalib.Result(changes)
 	fmt.Printf("Part one: %d\n", result)
 
-	repeat := chronalcalibration.Repeat(changes)
+	repeat := chrnlcalib.Repeat(changes)
 	fmt.Printf("Part two: %d\n", repeat)
 }
